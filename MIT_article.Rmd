@@ -1,0 +1,39 @@
+---
+title: "MIT_article"
+author: "Kuvaldina"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lme4,lmerTest)
+library(sjPlot)
+library(sjmisc)
+library(psych)
+library(haven)
+library(dplyr)
+library(effects)
+library(visreg)
+library(lsmeans)
+library(ggplot2)
+library(apastats)
+```
+
+Introduction
+
+```{r}
+dataset0<-read.csv("/Users/mariakuvaldina/Documents/R/GIT_MIT/SequentialIBSpB_2018_Farmigdale_2017_2018.csv", header=FALSE, sep=",")
+
+dataset0<- dplyr::rename(dataset0,Subject=V1, Trial=V2, Onset=V3, Extracolor=V4, Congruence=V5, SumBounces=V6, SumPressed=V7, TargNum=V8, DistNum=V9, ExtraNum=V10, Correct=V11, Response=V12, RecognitionRT=V13, computers=V14, Time=V15)
+
+
+dataset <- na.omit(dataset0)
+```
+Methods section
+
+```{r pressure, echo=FALSE}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

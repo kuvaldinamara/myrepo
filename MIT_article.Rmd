@@ -23,7 +23,11 @@ library(apastats)
 Introduction
 
 ```{r}
-dataset0<-read.csv("/Users/mariakuvaldina/Documents/R/GIT_MIT/SequentialIBSpB_2018_Farmigdale_2017_2018.csv", header=FALSE, sep=",")
+file_path<-setwd(getwd())
+filename="SequentialIBSpB_2018_Farmigdale_2017_2018.csv"
+dataset0<-read.csv(paste(file_path, "/", filename, sep=""), header=TRUE, sep=',');  #This is how we read a file into R
+
+#dataset0<-read.csv("/Users/mariakuvaldina/Documents/R/GIT_MIT/SequentialIBSpB_2018_Farmigdale_2017_2018.csv", header=FALSE, sep=",")
 
 dataset0<- dplyr::rename(dataset0,Subject=V1, Trial=V2, Onset=V3, Extracolor=V4, Congruence=V5, SumBounces=V6, SumPressed=V7, TargNum=V8, DistNum=V9, ExtraNum=V10, Correct=V11, Response=V12, RecognitionRT=V13, computers=V14, Time=V15)
 
